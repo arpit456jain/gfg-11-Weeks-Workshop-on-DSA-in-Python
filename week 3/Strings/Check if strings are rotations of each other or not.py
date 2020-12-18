@@ -1,7 +1,15 @@
 
 
 def areRotations(s1, s2):
-    pass
+    l1= list(s1)
+    l2 = list(s2)
+    l1.sort()
+    l2.sort()
+    # print(l1,l2)
+    if l1 == l2:
+        return True
+    else:
+        return False
 
 
 if __name__ == '__main__':
