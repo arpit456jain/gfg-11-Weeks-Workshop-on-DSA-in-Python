@@ -7,6 +7,22 @@
 
 '''
 
+def strstr2(s, p):
+    #by rabin kab algo but without hashing
+    print("string is",s,"and pattern is",p)
+    strlen = len(s)
+    pattern_len = len(p)
+    i=0
+    j=pattern_len - 1
+    while(j<strlen):
+        sbustring=s[i:j+1]
+        print(sbustring)
+        if(sbustring == p):
+            print("equal")
+            return i
+        i = i+1
+        j = j+1
+    return -1
 
 def strstr(s, p):
     print(s,p)
@@ -37,6 +53,6 @@ if __name__ == '__main__':
     for cases in range(t):
         s="GeeksForGeeks"
         p="Fr"
-        print(strstr(s, p))
+        print(strstr2(s, p))
 
 # } Driver Code Ends

@@ -76,7 +76,9 @@ def longestPalSubstr(st):
             i = i + 1
         k = k + 1
 
-
+    print("table is")
+    for i in table:
+        print(*i)
     return maxLength  # return length of LPS
 
 
@@ -85,7 +87,7 @@ if __name__=='__main__':
     tc=1
     for _ in range(tc):
         # str=input()
-        str = "abcd"
+        str = "aabbaa"
         print(longestPalindrome(str))
         print(longestPalSubstr(str))
 # } Driver Code Ends
