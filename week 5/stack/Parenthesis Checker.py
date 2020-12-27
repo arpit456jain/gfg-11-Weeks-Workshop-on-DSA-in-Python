@@ -7,10 +7,11 @@ Function Arguments :
 def ispar(x):
     hashmap = {'{':'}','[':']','(':')'}
     print(x,type(x))
+    opening_braces = ['(','{','[']
     stack1 = []
     for i in x:
         print(i)
-        if i == '(' or i == '[' or i == '{':
+        if i in opening_braces:
             stack1.append(i)
         else:
             print("in else")
@@ -18,14 +19,16 @@ def ispar(x):
                 print("stack empty")
                 return False
             else:
-
-                if hashmap[stack1[-1]] == i:
-                    print("before poping",stack1)
-                    stack1.pop()
-                    print("after poping",stack1)
-                else:
-                    print("appending")
-                    stack1.append(i)
+                try:
+                    if hashmap[stack1[-1]] == i:
+                        print("before poping",stack1)
+                        stack1.pop()
+                        print("after poping",stack1)
+                    else:
+                        print("appending")
+                        stack1.append(i)
+                except:
+                    return False
 
     print("final stack is",stack1)
     if len(stack1)!=0:
@@ -38,7 +41,7 @@ if __name__ == '__main__':
         #n = int(input())
         #n,k = map(int,imput().strip().split())
         #a = list(map(int,input().strip().split()))
-        s = "{}{(}))}"
+        s = "{([])}"
         if ispar(s):
             print("balanced")
         else:
