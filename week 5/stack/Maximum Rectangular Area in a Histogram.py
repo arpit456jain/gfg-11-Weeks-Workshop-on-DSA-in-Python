@@ -9,58 +9,57 @@ def getMaxArea(arr):
     print(arr, n)
     maxarea = 0
     stack = []
-    stack2 = []
     limitforleftbar = [None for x in range(n)]
-    lastpopedindex= 0
+
     limitforrightbar = [None for x in range(n)]
     # traverse the array
     for i in range(len(arr)):
-        # print(i)
+        print(i)
         # find left bar less than current
         # print("left bar")
 
         if len(stack) == 0:
             print("stack is empty")
             stack.append(i)
-            limitforleftbar[i] = lastpopedindex
+            limitforleftbar[i] = 0
         else:
             print("stack is not empty ",stack)
             if len(stack)!=0 and arr[stack[-1]]>=arr[i]:
                 while(len(stack)!=0 and arr[stack[-1]]>=arr[i]):
-                    lastpopedindex = stack.pop()
+                    stack.pop()
                 if len(stack) == 0:
                     limitforleftbar[i] = 0
                 else:
-                    limitforleftbar[i] = lastpopedindex
+                    limitforleftbar[i] = stack[-1] + 1
                 stack.append(i)
             else:
-                limitforleftbar[i] = stack[-1] + 1
+                limitforleftbar[i] = i
                 stack.append(i)
         print("left limits",limitforleftbar,"and stack is",stack)
-
+    stack = []
     for i in range(len(arr)-1,-1,-1):
         print(i)
         #find right bar less than current
         # print("right bar")
-        if len(stack2) == 0:
+        if len(stack) == 0:
             print("stack is empty")
-            stack2.append(i)
+            stack.append(i)
             limitforrightbar[i] = i
-            print("right limits",limitforrightbar,"and stack is\n",stack2)
+            print("right limits",limitforrightbar,"and stack is\n",stack)
         else:
-            print("stack is not empty",stack2)
-            if len(stack2)!=0 and arr[stack2[-1]] >= arr[i]:
-                while(len(stack2)!=0 and arr[stack2[-1]] >= arr[i]):
-                    lastpopedindex = stack2.pop()
-                if len(stack2) == 0:
+            print("stack is not empty",stack)
+            if len(stack)!=0 and arr[stack[-1]] >= arr[i]:
+                while(len(stack)!=0 and arr[stack[-1]] >= arr[i]):
+                    stack.pop()
+                if len(stack) == 0:
                     limitforrightbar[i] = n-1
                 else:
-                    limitforrightbar[i] = lastpopedindex
-                stack2.append(i)
+                    limitforrightbar[i] = stack[-1] - 1
+                stack.append(i)
             else:
-                limitforrightbar[i] = stack2[-1] - 1
-                stack2.append(i)
-            print("right limits",limitforrightbar,"and stack is\n",stack2)
+                limitforrightbar[i] = i
+                stack.append(i)
+            print("right limits",limitforrightbar,"and stack is\n",stack)
     # now traverse both the limits and find the area
     maxarea = 0
     for i in range(n):
@@ -70,6 +69,7 @@ def getMaxArea(arr):
             maxarea=area
         print("for bar ",i,"no of bars covered",no_of_bars,"and area is",area)
     return maxarea
+
 def getMaxArea2(arr):
     # naive approch :
     n = len(arr)
