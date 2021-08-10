@@ -12,7 +12,6 @@ A Comprehensive DSA Workshop Learn Data Structures and Algorithms in-depth in ju
 | Quadratic Equation Roots| [solution](https://github.com/arpit456jain/gfg-11-Weeks-Workshop-on-DSA-in-Python/blob/main/week%201/maths/5%20roots%20of%20quadratic%20eq.py) | 
 | Digits In Factorial| [solution](https://github.com/arpit456jain/gfg-11-Weeks-Workshop-on-DSA-in-Python/blob/main/week%201/maths/6%20no%20of%20digits%20in%20factorial.py) |
 | GP Term| [solution](https://github.com/arpit456jain/gfg-11-Weeks-Workshop-on-DSA-in-Python/blob/main/week%201/maths/7%20nth%20term%20of%20GP.py) |
-| Check Prime| [solution](https://github.com/arpit456jain/gfg-11-Weeks-Workshop-on-DSA-in-CPP/blob/master/week1/Mathematics/check_Prime.cpp)|
 | Primality Test| [solution](https://github.com/arpit456jain/gfg-11-Weeks-Workshop-on-DSA-in-Python/blob/main/week%201/maths/8.%20Primality%20Test.py) |
 | Exactly 3 Divisors| [solution](https://github.com/arpit456jain/gfg-11-Weeks-Workshop-on-DSA-in-Python/blob/main/week%201/maths/9%20exactly%203%20divisors.py) |
 | Modular Multiplicative Inverse| [solution](https://github.com/arpit456jain/gfg-11-Weeks-Workshop-on-DSA-in-Python/blob/main/week%201/maths/10%20Modular%20Multiplicative%20Inverse.py) |
